@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="sprites.png">
+	<!--
+	Created with ShoeBox
+	http://renderhjs.net/shoebox/
+	-->
+	<SubTexture name="blue_button00.png"	x="0"	y="0"	width="190"	height="49" frameX="-0" frameY="-0" frameWidth="190" frameHeight="49"/>
+	<SubTexture name="close.png"	x="0"	y="50"	width="40"	height="41" frameX="-4" frameY="-4" frameWidth="48" frameHeight="48"/>
+	<SubTexture name="zoomin.png"	x="0"	y="92"	width="24"	height="24" frameX="-0" frameY="-0" frameWidth="24" frameHeight="24"/>
+	<SubTexture name="zoomout.png"	x="25"	y="92"	width="24"	height="24" frameX="-0" frameY="-0" frameWidth="24" frameHeight="24"/>
+</TextureAtlas>

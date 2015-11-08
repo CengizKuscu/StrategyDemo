@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0976115385c04824a7795fecb1719956:063e866dfb1d3f866dc15914e1001761:e3e6bb1b7384ef7b025034a0ee7fb223$ -->
+<TextureAtlas imagePath="buildingTiles_sheet.png" width="512" height="1024">
+    <SubTexture name="buildingTiles_000" x="404" y="1" width="99" height="85"/>
+    <SubTexture name="buildingTiles_001" x="1" y="1" width="133" height="127"/>
+    <SubTexture name="buildingTiles_002" x="270" y="1" width="132" height="127"/>
+    <SubTexture name="buildingTiles_003" x="270" y="130" width="132" height="127"/>
+    <SubTexture name="buildingTiles_004" x="135" y="131" width="132" height="127"/>
+    <SubTexture name="buildingTiles_005" x="403" y="436" width="99" height="54"/>
+    <SubTexture name="buildingTiles_006" x="403" y="492" width="99" height="54"/>
+    <SubTexture name="buildingTiles_007" x="404" y="88" width="99" height="85"/>
+    <SubTexture name="buildingTiles_008" x="404" y="175" width="99" height="85"/>
+    <SubTexture name="buildingTiles_009" x="269" y="259" width="132" height="127"/>
+    <SubTexture name="buildingTiles_010" x="1" y="260" width="132" height="127"/>
+    <SubTexture name="buildingTiles_011" x="136" y="1" width="132" height="128"/>
+    <SubTexture name="buildingTiles_012" x="135" y="260" width="132" height="127"/>
+    <SubTexture name="buildingTiles_013" x="269" y="517" width="99" height="54"/>
+    <SubTexture name="buildingTiles_014" x="269" y="388" width="132" height="127"/>
+    <SubTexture name="buildingTiles_015" x="403" y="262" width="99" height="85"/>
+    <SubTexture name="buildingTiles_016" x="403" y="349" width="99" height="85"/>
+    <SubTexture name="buildingTiles_017" x="1" y="389" width="132" height="127"/>
+    <SubTexture name="buildingTiles_018" x="135" y="389" width="132" height="127"/>
+    <SubTexture name="buildingTiles_019" x="1" y="130" width="132" height="128"/>
+</TextureAtlas>

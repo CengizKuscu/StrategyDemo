@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3ab49655078435c8695b9b80d9f8e92c:ed9b74c2a9bd9934efb15859f47675bd:dbeebaa39fd49ae9780c488f0128c248$ -->
+<TextureAtlas imagePath="game.png">
+    <SubTexture name="Smiley" x="391" y="126" width="49" height="49" frameX="-1" frameY="-1" frameWidth="50" frameHeight="50"/>
+    <SubTexture name="background-disabled-skin" x="501" y="289" width="8" height="8"/>
+    <SubTexture name="background-focused-skin" x="501" y="299" width="8" height="8"/>
+    <SubTexture name="background-popup-skin" x="505" y="66" width="5" height="5"/>
+    <SubTexture name="background-skin" x="501" y="309" width="8" height="8"/>
+    <SubTexture name="bridge" x="391" y="2" width="90" height="70" frameX="0" frameY="-14" frameWidth="90" frameHeight="90"/>
+    <SubTexture name="button-back-disabled-skin" x="443" y="108" width="17" height="22"/>
+    <SubTexture name="button-back-down-skin" x="442" y="132" width="17" height="22"/>
+    <SubTexture name="button-back-up-skin" x="442" y="156" width="17" height="22"/>
+    <SubTexture name="button-call-to-action-down-skin" x="503" y="178" width="7" height="22"/>
+    <SubTexture name="button-call-to-action-up-skin" x="503" y="202" width="7" height="22"/>
+    <SubTexture name="button-danger-down-skin" x="443" y="272" width="7" height="22"/>
+    <SubTexture name="button-danger-up-skin" x="395" y="267" width="7" height="22"/>
+    <SubTexture name="button-disabled-skin" x="385" y="271" width="7" height="22"/>
+    <SubTexture name="button-down-skin" x="404" y="267" width="7" height="22"/>
+    <SubTexture name="button-forward-disabled-skin" x="387" y="177" width="17" height="22"/>
+    <SubTexture name="button-forward-down-skin" x="406" y="177" width="17" height="22"/>
+    <SubTexture name="button-forward-up-skin" x="442" y="180" width="17" height="22"/>
+    <SubTexture name="button-quiet-hover-skin" x="413" y="273" width="7" height="22"/>
+    <SubTexture name="button-selected-disabled-skin" x="466" y="253" width="9" height="22"/>
+    <SubTexture name="button-selected-up-skin" x="466" y="277" width="9" height="22"/>
+    <SubTexture name="button-up-skin" x="422" y="273" width="7" height="22"/>
+    <SubTexture name="callout-arrow-bottom-skin" x="483" y="66" width="20" height="12"/>
+    <SubTexture name="callout-arrow-left-skin" x="462" y="108" width="12" height="20"/>
+    <SubTexture name="callout-arrow-right-skin" x="495" y="226" width="12" height="20"/>
+    <SubTexture name="callout-arrow-top-skin" x="483" y="80" width="20" height="12"/>
+    <SubTexture name="check-disabled-icon" x="442" y="204" width="16" height="16"/>
+    <SubTexture name="check-down-icon" x="387" y="201" width="16" height="16"/>
+    <SubTexture name="check-selected-disabled-icon" x="405" y="201" width="16" height="16"/>
+    <SubTexture name="check-selected-down-icon" x="387" y="219" width="16" height="16"/>
+    <SubTexture name="check-selected-up-icon" x="405" y="219" width="16" height="16"/>
+    <SubTexture name="check-up-icon" x="423" y="221" width="16" height="16"/>
+    <SubTexture name="close" x="461" y="178" width="40" height="41" frameX="-4" frameY="-4" frameWidth="48" frameHeight="48"/>
+    <SubTexture name="coin" x="462" y="130" width="46" height="46" frameX="-10" frameY="-9" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="drugstore" x="259" y="127" width="126" height="106" frameX="-1" frameY="-12" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="focus-indicator-skin" x="491" y="276" width="11" height="11"/>
+    <SubTexture name="government" x="2" y="189" width="125" height="125"/>
+    <SubTexture name="hangar" x="131" y="184" width="126" height="88" frameX="-1" frameY="-21" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="header-background-skin" x="2" y="2" width="128" height="64"/>
+    <SubTexture name="header-popup-background-skin" x="132" y="2" width="128" height="64"/>
+    <SubTexture name="horizontal-scroll-bar-decrement-button-disabled-icon" x="477" y="84" width="3" height="4"/>
+    <SubTexture name="horizontal-scroll-bar-decrement-button-disabled-skin" x="458" y="239" width="12" height="12"/>
+    <SubTexture name="horizontal-scroll-bar-decrement-button-down-skin" x="477" y="243" width="12" height="12"/>
+    <SubTexture name="horizontal-scroll-bar-decrement-button-icon" x="505" y="83" width="3" height="4"/>
+    <SubTexture name="horizontal-scroll-bar-decrement-button-up-skin" x="438" y="244" width="12" height="12"/>
+    <SubTexture name="horizontal-scroll-bar-increment-button-disabled-icon" x="472" y="239" width="3" height="4"/>
+    <SubTexture name="horizontal-scroll-bar-increment-button-disabled-skin" x="491" y="248" width="12" height="12"/>
+    <SubTexture name="horizontal-scroll-bar-increment-button-down-skin" x="452" y="253" width="12" height="12"/>
+    <SubTexture name="horizontal-scroll-bar-increment-button-icon" x="472" y="245" width="3" height="4"/>
+    <SubTexture name="horizontal-scroll-bar-increment-button-up-skin" x="438" y="258" width="12" height="12"/>
+    <SubTexture name="horizontal-simple-scroll-bar-thumb-skin" x="483" y="2" width="26" height="10"/>
+    <SubTexture name="item-renderer-selected-background-skin" x="509" y="14" width="1" height="22"/>
+    <SubTexture name="list-background-skin" x="433" y="272" width="8" height="8"/>
+    <SubTexture name="museum" x="259" y="235" width="124" height="124"/>
+    <SubTexture name="next" x="443" y="74" width="32" height="32"/>
+    <SubTexture name="page-indicator-normal-disabled-skin" x="489" y="289" width="10" height="10"/>
+    <SubTexture name="page-indicator-normal-skin" x="489" y="301" width="10" height="10"/>
+    <SubTexture name="page-indicator-selected-disabled-skin" x="385" y="255" width="10" height="10"/>
+    <SubTexture name="page-indicator-selected-skin" x="397" y="255" width="10" height="10"/>
+    <SubTexture name="picker-list-icon-disabled" x="452" y="281" width="8" height="8"/>
+    <SubTexture name="picker-list-icon-selected" x="385" y="267" width="8" height="2" frameX="0" frameY="-3" frameWidth="8" frameHeight="8"/>
+    <SubTexture name="picker-list-icon" x="452" y="291" width="8" height="8"/>
+    <SubTexture name="previous" x="477" y="94" width="32" height="32"/>
+    <SubTexture name="profile" x="391" y="74" width="50" height="50"/>
+    <SubTexture name="property" x="262" y="2" width="127" height="123" frameX="0" frameY="-3" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="radio-selected-disabled-icon" x="385" y="237" width="16" height="16"/>
+    <SubTexture name="radio-selected-down-icon" x="403" y="237" width="16" height="16"/>
+    <SubTexture name="radio-selected-up-icon" x="460" y="221" width="16" height="16"/>
+    <SubTexture name="search-icon-disabled" x="409" y="255" width="10" height="10"/>
+    <SubTexture name="search-icon" x="421" y="261" width="10" height="10"/>
+    <SubTexture name="shop" x="2" y="68" width="127" height="119" frameX="0" frameY="-6" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="tab-disabled-skin" x="425" y="177" width="15" height="20"/>
+    <SubTexture name="tab-down-skin" x="425" y="199" width="15" height="20"/>
+    <SubTexture name="tab-selected-disabled-skin" x="441" y="222" width="15" height="20"/>
+    <SubTexture name="tab-selected-skin" x="421" y="239" width="15" height="20"/>
+    <SubTexture name="tab-up-skin" x="478" y="221" width="15" height="20"/>
+    <SubTexture name="temple" x="131" y="68" width="126" height="114" frameX="-1" frameY="-7" frameWidth="128" frameHeight="128"/>
+    <SubTexture name="vertical-scroll-bar-decrement-button-disabled-icon" x="505" y="73" width="4" height="3"/>
+    <SubTexture name="vertical-scroll-bar-decrement-button-disabled-skin" x="452" y="267" width="12" height="12"/>
+    <SubTexture name="vertical-scroll-bar-decrement-button-down-skin" x="477" y="257" width="12" height="12"/>
+    <SubTexture name="vertical-scroll-bar-decrement-button-icon" x="505" y="78" width="4" height="3"/>
+    <SubTexture name="vertical-scroll-bar-decrement-button-up-skin" x="431" y="282" width="7" height="12"/>
+    <SubTexture name="vertical-scroll-bar-increment-button-disabled-icon" x="477" y="74" width="4" height="3"/>
+    <SubTexture name="vertical-scroll-bar-increment-button-disabled-skin" x="491" y="262" width="12" height="12"/>
+    <SubTexture name="vertical-scroll-bar-increment-button-down-skin" x="477" y="271" width="12" height="12"/>
+    <SubTexture name="vertical-scroll-bar-increment-button-icon" x="477" y="79" width="4" height="3"/>
+    <SubTexture name="vertical-scroll-bar-increment-button-up-skin" x="394" y="291" width="7" height="12"/>
+    <SubTexture name="vertical-simple-scroll-bar-thumb-skin" x="477" y="285" width="10" height="26"/>
+    <SubTexture name="zoomin" x="483" y="14" width="24" height="24"/>
+    <SubTexture name="zoomout" x="483" y="40" width="24" height="24"/>
+</TextureAtlas>
