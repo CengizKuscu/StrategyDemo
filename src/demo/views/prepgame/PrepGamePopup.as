@@ -32,7 +32,7 @@ public class PrepGamePopup extends Sprite
         var bg:Quad = new Quad(150, 150, 0xfea212);
         addChild(bg);
 
-        var pathToFile:String = File.applicationDirectory.resolvePath('savedata.dat').nativePath;
+        var pathToFile:String = File.applicationStorageDirectory.resolvePath('savedata.dat').nativePath;
         var file:File = new File(pathToFile);
 
         mContinueGameBtn = new Button();

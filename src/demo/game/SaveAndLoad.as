@@ -14,7 +14,7 @@ public class SaveAndLoad
 {
     public static function writeFile(bytes:ByteArray):void
     {
-        var pathToFile:String = File.applicationDirectory.resolvePath('savedata.dat').nativePath;
+        var pathToFile:String = File.applicationStorageDirectory.resolvePath('savedata.dat').nativePath;
         var file:File = new File(pathToFile);
 
         var stream:FileStream = new FileStream();
@@ -31,7 +31,7 @@ public class SaveAndLoad
 
         var bytes:ByteArray = new ByteArray();
 
-        var pathToFile:String = File.applicationDirectory.resolvePath('savedata.dat').nativePath;
+        var pathToFile:String = File.applicationStorageDirectory.resolvePath('savedata.dat').nativePath;
         var file:File = new File(pathToFile);
         var stream:FileStream = new FileStream();
 
