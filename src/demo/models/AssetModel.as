@@ -10,7 +10,7 @@ import feathers.themes.CastleBuilderTheme;
 import starling.textures.Texture;
 import starling.utils.AssetManager;
 
-public class AssetModel implements IAssetProvider
+public class AssetModel
 {
     private var mAssetManager:AssetManager;
 

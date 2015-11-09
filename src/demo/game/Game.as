@@ -5,9 +5,7 @@ package demo.game
 {
 import com.greensock.TweenLite;
 
-import demo.game.GridItem;
-
-import demo.models.IAssetProvider;
+import demo.models.AssetModel;
 import demo.models.vo.BuildingTypeVO;
 import demo.zoom.PanZoomController;
 
@@ -30,7 +28,7 @@ import starling.utils.Color;
 
 public class Game extends Sprite
 {
-    private var mAssetProvider:IAssetProvider;
+    private var mAssetProvider:AssetModel;
 
     private var mBgImage:Image;
     private var mItemFactory:GridItemFactory;
@@ -62,7 +60,7 @@ public class Game extends Sprite
 
     public var saveDataSignal:Signal;
 
-    public function Game(assetProvider:IAssetProvider, grid:Grid, displayBounds:Rectangle, itemFactory:GridItemFactory)
+    public function Game(assetProvider:AssetModel, grid:Grid, displayBounds:Rectangle, itemFactory:GridItemFactory)
     {
         mAssetProvider = assetProvider;
         _mGrid = grid;

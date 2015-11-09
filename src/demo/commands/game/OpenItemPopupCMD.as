@@ -4,8 +4,8 @@
 package demo.commands.game
 {
 import demo.game.GridItem;
+import demo.models.AssetModel;
 import demo.models.GameDataModel;
-import demo.models.IAssetProvider;
 import demo.models.vo.BuildingTypeVO;
 import demo.views.itempopup.ItemPopupView;
 
@@ -16,7 +16,7 @@ import robotlegs.bender.bundles.mvcs.Command;
 public class OpenItemPopupCMD extends Command
 {
     [Inject]
-    public var assetProvider:IAssetProvider;
+    public var assetProvider:AssetModel;
 
     [Inject]
     public var typeId:String;

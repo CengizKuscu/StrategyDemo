@@ -3,7 +3,7 @@
  */
 package demo.views.prepgame
 {
-import demo.models.IAssetProvider;
+import demo.models.AssetModel;
 
 import feathers.controls.Button;
 import feathers.core.PopUpManager;
@@ -18,14 +18,14 @@ import starling.events.Event;
 
 public class PrepGamePopup extends Sprite
 {
-    private var mAssetProvider:IAssetProvider;
+    private var mAssetProvider:AssetModel;
     private var mContinueGameBtn:Button;
     private var mNewGameBtn:Button;
 
     public var startNewGameSignal:Signal;
     public var continueGameSignal:Signal;
 
-    public function PrepGamePopup(assetProvider:IAssetProvider)
+    public function PrepGamePopup(assetProvider:AssetModel)
     {
         mAssetProvider = assetProvider;
 

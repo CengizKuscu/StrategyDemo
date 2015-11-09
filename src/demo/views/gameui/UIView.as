@@ -3,7 +3,7 @@
  */
 package demo.views.gameui
 {
-import demo.models.IAssetProvider;
+import demo.models.AssetModel;
 
 import org.osflash.signals.Signal;
 
@@ -13,7 +13,7 @@ import starling.events.Event;
 
 public class UIView extends Sprite
 {
-    private var mAssetProvider:IAssetProvider;
+    private var mAssetProvider:AssetModel;
     private var mZoomOutButton:Button;
     private var mZoomInButton:Button;
     private var mShopButton:Button;
@@ -22,7 +22,7 @@ public class UIView extends Sprite
     public var zoomOut:Signal = new Signal();
     public var openShop:Signal = new Signal();
 
-    public function UIView(assetProvider:IAssetProvider)
+    public function UIView(assetProvider:AssetModel)
     {
         mAssetProvider = assetProvider;
 

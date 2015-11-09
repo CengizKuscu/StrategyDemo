@@ -3,7 +3,6 @@
  */
 package demo.commands.game
 {
-import demo.game.GridItem;
 import demo.game.SaveAndLoad;
 
 import flash.net.registerClassAlias;

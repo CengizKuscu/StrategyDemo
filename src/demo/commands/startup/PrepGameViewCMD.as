@@ -6,8 +6,8 @@ package demo.commands.startup
 import demo.game.Game;
 import demo.game.Grid;
 import demo.game.GridItemFactory;
+import demo.models.AssetModel;
 import demo.models.GameDataModel;
-import demo.models.IAssetProvider;
 import demo.signals.game.OpenItemPopupSignal;
 import demo.signals.game.SaveDataSignal;
 import demo.views.StarlingRoot;
@@ -31,7 +31,7 @@ public class PrepGameViewCMD extends Command
     public var starling:Starling;
 
     [Inject]
-    public var assetProvider:IAssetProvider;
+    public var assetProvider:AssetModel;
 
     [Inject]
     public var gameData:GameDataModel;

@@ -5,7 +5,7 @@ package demo.views.shop
 {
 import com.greensock.TweenLite;
 
-import demo.models.IAssetProvider;
+import demo.models.AssetModel;
 import demo.models.vo.BuildingTypeVO;
 
 import feathers.controls.Button;
@@ -29,13 +29,13 @@ import starling.events.Event;
 public class ShopView extends Sprite
 {
     private var mItemsByCategory:Dictionary;
-    private var mAssetProvider:IAssetProvider;
+    private var mAssetProvider:AssetModel;
     private var mScrollContainer:ScrollContainer;
     private var mCloseBtn:starling.display.Button;
 
     public var itemSelected:Signal = new Signal(BuildingTypeVO);
 
-    public function ShopView(itemTypesDic:Dictionary, assetProvider:IAssetProvider)
+    public function ShopView(itemTypesDic:Dictionary, assetProvider:AssetModel)
     {
         mAssetProvider = assetProvider;
 

@@ -6,7 +6,7 @@ package demo.views.itempopup
 import com.greensock.TweenLite;
 
 import demo.game.GridItem;
-import demo.models.IAssetProvider;
+import demo.models.AssetModel;
 import demo.models.vo.BuildingTypeVO;
 
 import feathers.controls.Button;
@@ -24,7 +24,7 @@ import starling.utils.VAlign;
 
 public class ItemPopupView extends Sprite
 {
-    private var mAssetProvider:IAssetProvider;
+    private var mAssetProvider:AssetModel;
     private var mBuildTypeVO:BuildingTypeVO;
 
     private var mCloseBtn:PopupCloseBtn;
@@ -34,7 +34,7 @@ public class ItemPopupView extends Sprite
 
     private var mGridItem:GridItem;
 
-    public function ItemPopupView(assetProvider:IAssetProvider, buildTypeVO:BuildingTypeVO, gridItem:GridItem)
+    public function ItemPopupView(assetProvider:AssetModel, buildTypeVO:BuildingTypeVO, gridItem:GridItem)
     {
         mAssetProvider = assetProvider;
         mBuildTypeVO = buildTypeVO;

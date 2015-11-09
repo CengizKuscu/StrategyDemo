@@ -3,8 +3,8 @@
  */
 package demo.commands.ui
 {
+import demo.models.AssetModel;
 import demo.models.GameDataModel;
-import demo.models.IAssetProvider;
 import demo.views.shop.ShopView;
 
 import feathers.core.PopUpManager;
@@ -22,7 +22,7 @@ public class OpenShopViewCMD extends Command
     public var gameData:GameDataModel;
 
     [Inject]
-    public var assetProvider:IAssetProvider;
+    public var assetProvider:AssetModel;
 
     override public function execute():void
     {

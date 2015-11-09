@@ -3,7 +3,7 @@
  */
 package demo.game
 {
-import demo.models.IAssetProvider;
+import demo.models.AssetModel;
 import demo.models.vo.BuildingTypeVO;
 
 import flash.utils.Dictionary;
@@ -12,11 +12,11 @@ import starling.display.Image;
 
 public class GridItemFactory
 {
-    private var mAssetProvider:IAssetProvider;
+    private var mAssetProvider:AssetModel;
     private var mItemTypeDataById:Dictionary;
     private var mImageCacheByTypeId:Dictionary;
 
-    public function GridItemFactory(assetProvider:IAssetProvider, itemTypeData:Dictionary)
+    public function GridItemFactory(assetProvider:AssetModel, itemTypeData:Dictionary)
     {
         mAssetProvider = assetProvider;
         mItemTypeDataById = itemTypeData;

@@ -17,7 +17,6 @@ import demo.commands.ui.ZoomInCMD;
 import demo.commands.ui.ZoomOutCMD;
 import demo.models.AssetModel;
 import demo.models.GameDataModel;
-import demo.models.IAssetProvider;
 import demo.signals.game.OpenItemPopupSignal;
 import demo.signals.game.SaveDataSignal;
 import demo.signals.game.UnBuildSignal;
@@ -96,10 +95,9 @@ public class DemoBuilderConfig implements IConfig
         //Models
         injector.map(GameDataModel).asSingleton();
 
-        var assetModel:AssetModel = new AssetModel();
-        injector.injectInto(assetModel);
-        injector.map(IAssetProvider).toValue(assetModel);
-        injector.map(AssetModel).toValue(assetModel);
+
+
+        injector.map(AssetModel).asSingleton();
 
         mediatorMap.map(UIView).toMediator(UIMediator);
         mediatorMap.map(ShopView).toMediator(ShopMediator);
