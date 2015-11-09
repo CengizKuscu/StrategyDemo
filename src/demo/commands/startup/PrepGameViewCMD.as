@@ -12,6 +12,9 @@ import demo.signals.game.OpenItemPopupSignal;
 import demo.signals.game.SaveDataSignal;
 import demo.views.StarlingRoot;
 import demo.views.gameui.UIView;
+import demo.views.prepgame.PrepGamePopup;
+
+import feathers.core.PopUpManager;
 
 import flash.geom.Rectangle;
 
@@ -71,8 +74,11 @@ public class PrepGameViewCMD extends Command
 
         game.openItemPopupSignal.add(openItemPopupSignal.dispatch);
         game.saveDataSignal.add(saveDataSignal.dispatch);
-        game.loadItems();
-        game.start();
+        //game.loadItems();
+        //game.start();
+
+        var prepPopup:PrepGamePopup = new PrepGamePopup(assetProvider);
+        PopUpManager.addPopUp(prepPopup);
 
     }
 }

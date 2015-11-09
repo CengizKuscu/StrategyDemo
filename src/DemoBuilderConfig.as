@@ -6,6 +6,8 @@ package
 import demo.commands.game.OpenItemPopupCMD;
 import demo.commands.game.SaveDataCMD;
 import demo.commands.game.UnBuildCMD;
+import demo.commands.prepgame.ContinueGameCMD;
+import demo.commands.prepgame.StartNewGameCMD;
 import demo.commands.startup.LoadAssestsCMD;
 import demo.commands.startup.LoadGameDataCMD;
 import demo.commands.startup.PrepGameViewCMD;
@@ -19,6 +21,8 @@ import demo.models.IAssetProvider;
 import demo.signals.game.OpenItemPopupSignal;
 import demo.signals.game.SaveDataSignal;
 import demo.signals.game.UnBuildSignal;
+import demo.signals.prepgame.ContinueGameSignal;
+import demo.signals.prepgame.StartNewGameSignal;
 import demo.signals.startup.LoadAssetsSignal;
 import demo.signals.startup.LoadGameDataSignal;
 import demo.signals.startup.PrepGameViewSignal;
@@ -30,6 +34,8 @@ import demo.views.gameui.UIMediator;
 import demo.views.gameui.UIView;
 import demo.views.itempopup.ItemPopupMediator;
 import demo.views.itempopup.ItemPopupView;
+import demo.views.prepgame.PrepGamePopup;
+import demo.views.prepgame.PrepGamePopupMediator;
 import demo.views.shop.ShopMediator;
 import demo.views.shop.ShopView;
 
@@ -84,6 +90,8 @@ public class DemoBuilderConfig implements IConfig
         signalCommandMap.map(UnBuildSignal).toCommand(UnBuildCMD);
         signalCommandMap.map(SaveDataSignal).toCommand(SaveDataCMD);
 
+        signalCommandMap.map(StartNewGameSignal).toCommand(StartNewGameCMD);
+        signalCommandMap.map(ContinueGameSignal).toCommand(ContinueGameCMD);
 
         //Models
         injector.map(GameDataModel).asSingleton();
@@ -96,6 +104,7 @@ public class DemoBuilderConfig implements IConfig
         mediatorMap.map(UIView).toMediator(UIMediator);
         mediatorMap.map(ShopView).toMediator(ShopMediator);
         mediatorMap.map(ItemPopupView).toMediator(ItemPopupMediator);
+        mediatorMap.map(PrepGamePopup).toMediator(PrepGamePopupMediator);
     }
 }
 }
