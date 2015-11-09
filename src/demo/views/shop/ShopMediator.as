@@ -4,9 +4,7 @@
 package demo.views.shop
 {
 import demo.models.vo.BuildingTypeVO;
-import demo.signals.ShopItemSelectedSignal;
-
-import org.osflash.signals.Signal;
+import demo.signals.ui.ShopItemSelectedSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 

@@ -3,8 +3,6 @@
  */
 package demo.game
 {
-import flash.geom.Point;
-
 import starling.display.Image;
 
 public class GridItem
@@ -15,8 +13,8 @@ public class GridItem
     public var gridX:int;
     public var gridY:int;
     public var image:Image;
-    public var tmpMergeId:String;
-    public var mergeItem:GridItem;
+    public var tmpMergeTypeId:String;
+    public var mergeItemId:String;
 
     public function GridItem(_id:String, _typeId:String, _gridX:int, _gridY:int, _image:Image)
     {

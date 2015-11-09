@@ -10,9 +10,6 @@ import flash.utils.Dictionary;
 
 import starling.display.Image;
 
-import robotlegs.bender.framework.impl.UID;
-
-
 public class GridItemFactory
 {
     private var mAssetProvider:IAssetProvider;
@@ -31,12 +28,11 @@ public class GridItemFactory
         var image:Image = new Image(mAssetProvider.getTexture(itemTypeId));
         var buildingTypeData:BuildingTypeVO = mItemTypeDataById[itemTypeId];
 
-        image.pivotX = image.width*0.5;
+        image.pivotX = image.width * 0.5;
         image.pivotY = image.height;
         //TODO change pivot
 
-        if(buildingTypeData != null)
-        {
+        if (buildingTypeData != null) {
             image.scaleX = image.scaleY = buildingTypeData.scale;
         }
 
@@ -50,16 +46,17 @@ public class GridItemFactory
         return item;
     }
 
-    public function createFakeGridItem(X:int, Y:int, itemTypeId:String, mergeItem:GridItem):GridItem
+    public function createFakeGridItem(X:int, Y:int, itemTypeId:String, mergeItemId:String, id:String = null):GridItem
     {
         var item:GridItem = new GridItem(null, null, X, Y, null);
-        item.tmpMergeId = itemTypeId;
-        item.mergeItem = mergeItem;
-
+        item.tmpMergeTypeId = itemTypeId;
+        item.mergeItemId = mergeItemId;
+        item.id = id || getUniqueId();
         return item;
     }
 
-    private function getCachedImage(itemTypeId:String):Image {
+    private function getCachedImage(itemTypeId:String):Image
+    {
         var image:Image = mImageCacheByTypeId[itemTypeId];
         if (image == null) {
             image = createItemImage(itemTypeId);
@@ -67,7 +64,8 @@ public class GridItemFactory
         return image;
     }
 
-    private static function getUniqueId():String {
+    private static function getUniqueId():String
+    {
         //var _uid:String
         return (Math.floor(Math.random() * 100000000)).toString(16);
     };

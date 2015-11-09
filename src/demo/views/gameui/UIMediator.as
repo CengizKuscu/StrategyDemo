@@ -3,9 +3,9 @@
  */
 package demo.views.gameui
 {
-import demo.signals.OpenShopViewSignal;
-import demo.signals.ZoomInSignal;
-import demo.signals.ZoomOutSignal;
+import demo.signals.ui.OpenShopViewSignal;
+import demo.signals.ui.ZoomInSignal;
+import demo.signals.ui.ZoomOutSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 

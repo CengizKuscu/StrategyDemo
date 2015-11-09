@@ -6,7 +6,7 @@ package demo.models
 import demo.models.vo.BgConfigVO;
 import demo.models.vo.BuildingTypeVO;
 import demo.models.vo.GridConfigVO;
-import demo.signals.LoadAssetsSignal;
+import demo.signals.startup.LoadAssetsSignal;
 
 import flash.events.Event;
 import flash.events.IOErrorEvent;
@@ -56,7 +56,8 @@ public class GameDataModel
                     Number(_building.@pivotPointY)
             );
             buildingDataByTypeId[_buildingType.typeId] = _buildingType;
-        };
+        }
+        ;
 
         var _gridConfigXML:XML = xmlData.GridConfig[0];
         gridConfig = new GridConfigVO();

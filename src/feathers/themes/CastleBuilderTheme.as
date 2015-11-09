@@ -28,22 +28,19 @@ import starling.events.Event;
 import starling.textures.TextureAtlas;
 
 public class CastleBuilderTheme extends BaseMetalWorksDesktopTheme
-	{
+{
 
-		/**
-		 * Constructor.
-		 */
-		public function CastleBuilderTheme(_atlas:TextureAtlas)
-		{
-			super();
-            this.atlas = _atlas;
-			this.initialize();
-			this.dispatchEventWith(Event.COMPLETE);
-		}
-
-
+    /**
+     * Constructor.
+     */
+    public function CastleBuilderTheme(_atlas:TextureAtlas)
+    {
+        super();
+        this.atlas = _atlas;
+        this.initialize();
+        this.dispatchEventWith(Event.COMPLETE);
+    }
 
 
-
-	}
+}
 }

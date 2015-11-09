@@ -1,38 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <GameData>
     <BGConfig name="map1" width="2100" height="1400"/>
-    <GridConfig colCount="20" rowCount="20" gridSize="45" offsetX="1000" offsetY="0"/>
+    <GridConfig colCount="20" rowCount="20" gridSize="45" offsetX="1000" offsetY="100"/>
     <Assets>
         <Asset url="assets/game.png"/>
         <Asset url="assets/game.xml"/>
-        <Asset url="assets/sprites.png"/>
-        <Asset url="assets/sprites.xml"/>
         <Asset url="assets/buildingTiles_sheet.png"/>
         <Asset url="assets/buildingTiles_sheet.xml"/>
         <Asset url="assets/map1.jpg"/>
     </Assets>
 
     <Buildings>
-        <Building typeId="buildingTiles_000" name="Build 1"  cost="1500" description="description Build 1" category="common" scale="1.7"/>
-        <Building typeId="buildingTiles_001" name="Build 2"  cost="1500" description="description Build 2" category="common" scale="1.3"/>
-        <Building typeId="buildingTiles_002" name="Build 3"  cost="1500" description="description Build 3" category="common" scale="1.3"/>
-        <Building typeId="buildingTiles_003" name="Build 4"  cost="1500" description="description Build 4" category="common" scale="1.3"/>
-        <Building typeId="buildingTiles_004" name="Build 5"  cost="1500" description="description Build 5" category="common" scale="1.3"/>
-        <Building typeId="buildingTiles_005" name="Build 6"  cost="1500" description="description Build 6" category="workshop" scale="0.8"/>
-        <Building typeId="buildingTiles_006" name="Build 7"  cost="1500" description="description Build 7" category="workshop" scale="0.8"/>
-        <Building typeId="buildingTiles_007" name="Build 8"  cost="1500" description="description Build 8" category="workshop" scale="0.8"/>
-        <Building typeId="buildingTiles_008" name="Build 9"  cost="1500" description="description Build 9" category="workshop" scale="0.8"/>
-        <Building typeId="buildingTiles_009" name="Build 10" cost="1500" description="description Build 10" category="workshop" scale="0.65"/>
-        <Building typeId="buildingTiles_010" name="Build 11" cost="1500" description="description Build 11" category="workshop" scale="0.65"/>
-        <Building typeId="buildingTiles_011" name="Build 12" cost="1500" description="description Build 12" category="workshop" scale="0.65"/>
-        <Building typeId="buildingTiles_012" name="Build 13" cost="1500" description="description Build 13" category="workshop" scale="0.5"/>
-        <Building typeId="buildingTiles_013" name="Build 14" cost="1500" description="description Build 14" category="workshop" scale="0.65"/>
-        <Building typeId="buildingTiles_014" name="Build 15" cost="1500" description="description Build 15" category="workshop" scale="0.8"/>
-        <Building typeId="buildingTiles_015" name="Build 16" cost="1500" description="description Build 16" category="workshop" scale="0.65"/>
-        <Building typeId="buildingTiles_016" name="Build 17" cost="1500" description="description Build 17" category="workshop" scale="0.8"/>
-        <Building typeId="buildingTiles_017" name="Build 18" cost="1500" description="description Build 18" category="workshop" scale="0.65"/>
-        <Building typeId="buildingTiles_018" name="Build 19" cost="1500" description="description Build 19" category="workshop" scale="0.65"/>
-        <Building typeId="buildingTiles_019" name="Build 20" cost="1500" description="description Build 20" category="workshop" scale="0.65"/>
+        <Building typeId="buildingTiles_000" name="Build 1" cost="1500" description="Common Build"
+                  category="common" scale="1.7"/>
+        <Building typeId="buildingTiles_001" name="Build 2" cost="1500" description="Common Build"
+                  category="common" scale="1.3"/>
+        <Building typeId="buildingTiles_002" name="Build 3" cost="1500" description="Common Build"
+                  category="common" scale="1.3"/>
+        <Building typeId="buildingTiles_003" name="Build 4" cost="1500" description="Common Build"
+                  category="common" scale="1.3"/>
+        <Building typeId="buildingTiles_004" name="Build 5" cost="1500" description="Common Build"
+                  category="common" scale="1.3"/>
+        <Building typeId="buildingTiles_005" name="Build 6" cost="1500" description="description Build 6"
+                  category="workshop" scale="0.8"/>
+        <Building typeId="buildingTiles_006" name="Build 7" cost="1500" description="description Build 7"
+                  category="workshop" scale="0.8"/>
+        <Building typeId="buildingTiles_007" name="Build 8" cost="1500" description="description Build 8"
+                  category="workshop" scale="0.8"/>
+        <Building typeId="buildingTiles_008" name="Build 9" cost="1500" description="description Build 9"
+                  category="workshop" scale="0.8"/>
+        <Building typeId="buildingTiles_009" name="Build 10" cost="1500" description="description Build 10"
+                  category="workshop" scale="0.65"/>
+        <Building typeId="buildingTiles_010" name="Build 11" cost="1500" description="description Build 11"
+                  category="workshop" scale="0.65"/>
+        <Building typeId="buildingTiles_011" name="Build 12" cost="1500" description="description Build 12"
+                  category="workshop" scale="0.65"/>
+        <Building typeId="buildingTiles_012" name="Build 13" cost="1500" description="description Build 13"
+                  category="workshop" scale="0.5"/>
+        <Building typeId="buildingTiles_013" name="Build 14" cost="1500" description="description Build 14"
+                  category="workshop" scale="0.65"/>
+        <Building typeId="buildingTiles_014" name="Build 15" cost="1500" description="description Build 15"
+                  category="workshop" scale="0.8"/>
+        <Building typeId="buildingTiles_015" name="Build 16" cost="1500" description="description Build 16"
+                  category="workshop" scale="0.65"/>
+        <Building typeId="buildingTiles_016" name="Build 17" cost="1500" description="description Build 17"
+                  category="workshop" scale="0.8"/>
+        <Building typeId="buildingTiles_017" name="Build 18" cost="1500" description="description Build 18"
+                  category="workshop" scale="0.65"/>
+        <Building typeId="buildingTiles_018" name="Build 19" cost="1500" description="description Build 19"
+                  category="workshop" scale="0.65"/>
+        <Building typeId="buildingTiles_019" name="Build 20" cost="1500" description="description Build 20"
+                  category="workshop" scale="0.65"/>
         <!--<Building typeId="drugstore" name="Drug Store" levelCap="" cost="1000" category="workshop" pivotPointX="64" pivotPointY="121"/>
         <Building typeId="government" name="Government" levelCap="" cost="1500" category="workshop" pivotPointX="61" pivotPointY="125"/>
         <Building typeId="museum" name="Museum" levelCap="" cost="2000" category="workshop" pivotPointX="62" pivotPointY="126"/>

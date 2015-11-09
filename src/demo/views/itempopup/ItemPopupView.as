@@ -6,20 +6,16 @@ package demo.views.itempopup
 import com.greensock.TweenLite;
 
 import demo.game.GridItem;
-
 import demo.models.IAssetProvider;
 import demo.models.vo.BuildingTypeVO;
 
 import feathers.controls.Button;
-
 import feathers.core.PopUpManager;
 
 import org.osflash.signals.Signal;
 
 import starling.display.Image;
-
 import starling.display.Quad;
-
 import starling.display.Sprite;
 import starling.events.Event;
 import starling.text.TextField;
@@ -66,7 +62,7 @@ public class ItemPopupView extends Sprite
 
         this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 
-        mCloseBtn = new PopupCloseBtn(assetProvider.getTexture("close.png"));
+        mCloseBtn = new PopupCloseBtn(assetProvider.getTexture("close"));
         mCloseBtn.addEventListener(Event.TRIGGERED, onCloseBtnTriggered);
         mCloseBtn.x = 400;
         mCloseBtn.y = 0;
@@ -74,7 +70,7 @@ public class ItemPopupView extends Sprite
 
         mUnBuildBtn = new Button();
         mUnBuildBtn.label = "UNBUILD";
-        mUnBuildBtn.x = (bg.width - mUnBuildBtn.width)*0.5;
+        mUnBuildBtn.x = (bg.width - mUnBuildBtn.width) * 0.5;
         mUnBuildBtn.y = 170;
         addChild(mUnBuildBtn);
         mUnBuildBtn.addEventListener(Event.TRIGGERED, unBuildTrigger);
@@ -97,10 +93,10 @@ public class ItemPopupView extends Sprite
     {
         pivotX = this.width * 0.5;
         pivotY = this.height * 0.5;
-        this.x = stage.stageWidth*0.5;
-        this.y = stage.stageHeight*0.5;
+        this.x = stage.stageWidth * 0.5;
+        this.y = stage.stageHeight * 0.5;
 
-        TweenLite.from(this, 0.5, {scaleX:0, scaleY:0});
+        TweenLite.from(this, 0.5, {scaleX: 0, scaleY: 0});
     }
 }
 }

@@ -8,8 +8,9 @@ import flash.geom.Point;
 import flash.utils.Dictionary;
 
 import starling.display.Quad;
-
 import starling.display.QuadBatch;
+
+import utils.DictionaryUtils;
 
 public class Grid
 {
@@ -17,7 +18,7 @@ public class Grid
     private var mGridSize:Number;
     private var mTransform:Matrix;
     private var mInverseTransform:Matrix;
-    private var mItemsByItemId:Dictionary;
+    private var _mItemsByItemId:Dictionary;
 
     public function Grid(cols:int, rows:int, gridSize:Number, offsetX:Number, offsetY:Number)
     {
@@ -33,7 +34,7 @@ public class Grid
         mInverseTransform = mTransform.clone();
         mInverseTransform.invert();
 
-        mItemsByItemId = new Dictionary();
+        _mItemsByItemId = new Dictionary();
 
 
     }
@@ -73,23 +74,26 @@ public class Grid
         mItems[_item.gridX][_item.gridY] = _item;
         if (_item != null) {
             mItems[_item.gridX][_item.gridY] = _item;
-            mItemsByItemId[_item.id] = _item;
+            _mItemsByItemId[_item.id] = _item;
         }
     }
 
     public function removeItem(_item:GridItem):void
     {
         mItems[_item.gridX][_item.gridY] = null;
+        DictionaryUtils.removeItem(_mItemsByItemId, _item.id);
     }
 
     public function removeItemByGridPositions(gridX:int, gridY:int):void
     {
+        var tmpItem = mItems[gridX][gridY];
+        DictionaryUtils.removeItem(_mItemsByItemId, tmpItem.id);
         mItems[gridX][gridY] = null;
     }
 
     public function getItemByItemId(_itemId:String):GridItem
     {
-        return mItemsByItemId[_itemId];
+        return _mItemsByItemId[_itemId];
     }
 
     public function get data():Vector.<Vector.<GridItem>>
@@ -122,7 +126,8 @@ public class Grid
         return mInverseTransform;
     }
 
-    public function isAvailable(_pos:Point):Boolean {
+    public function isAvailable(_pos:Point):Boolean
+    {
         // if out of bounds return false
         if (_pos.x < 0 || _pos.y < 0 || _pos.x >= colCount || _pos.y >= rowCount) {
             return false;
@@ -131,10 +136,8 @@ public class Grid
 
         var gridItem:GridItem = mItems[int(_pos.x)][int(_pos.y)];
 
-        if(gridItem != null)
-        {
-            if((gridItem.typeId != null && gridItem.id != null) || gridItem.tmpMergeId != null )
-            {
+        if (gridItem != null) {
+            if ((gridItem.typeId != null && gridItem.id != null) || gridItem.tmpMergeTypeId != null) {
                 return false;
             }
 
@@ -146,7 +149,8 @@ public class Grid
         //return (mItems[int(_pos.x)][int(_pos.y)] == null);
     }
 
-    public function isoToCart(_point:Point):Point {
+    public function isoToCart(_point:Point):Point
+    {
         var _newPoint:Point = _point.clone();
         _newPoint.x = (_newPoint.x + 1) * mGridSize;
         _newPoint.y = (_newPoint.y + 1) * mGridSize;
@@ -154,12 +158,18 @@ public class Grid
         return _newPoint;
     }
 
-    public function cartToIso(_point:Point):Point {
+    public function cartToIso(_point:Point):Point
+    {
         var _newPoint:Point = _point.clone();
         _newPoint = inverseTransform.transformPoint(_newPoint);
         _newPoint.x = Math.floor(_newPoint.x / mGridSize);
         _newPoint.y = Math.floor(_newPoint.y / mGridSize);
         return _newPoint;
+    }
+
+    public function get mItemsByItemId():Dictionary
+    {
+        return _mItemsByItemId;
     }
 }
 }

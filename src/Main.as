@@ -1,6 +1,7 @@
-package {
+package
+{
 
-import demo.signals.LoadGameDataSignal;
+import demo.signals.startup.LoadGameDataSignal;
 import demo.views.StarlingRoot;
 
 import flash.display.Sprite;
@@ -34,14 +35,14 @@ public class Main extends Sprite
 
     private function onAddedToStaege(e:flash.events.Event):void
     {
-        stage.align		= StageAlign.TOP_LEFT;
-        stage.color		= 0x0;
-        stage.scaleMode	= StageScaleMode.NO_SCALE;
-        stage.frameRate	= 60;
+        stage.align = StageAlign.TOP_LEFT;
+        stage.color = 0x0;
+        stage.scaleMode = StageScaleMode.NO_SCALE;
+        stage.frameRate = 60;
         // TODO comment
-        stage.quality	= StageQuality.LOW;
+        stage.quality = StageQuality.LOW;
 
-        mStarling       = new Starling(StarlingRoot, stage);
+        mStarling = new Starling(StarlingRoot, stage);
         mStarling.addEventListener(starling.events.Event.ROOT_CREATED, onRootCreated);
         mStarling.start();
         mStarling.showStats = true;

@@ -32,44 +32,52 @@ public class PanZoomController
         zoom = mZoomValues[mCurrentZoomIndex];
     }
 
-    public function enable():void {
+    public function enable():void
+    {
         mTarget.addEventListener(TouchEvent.TOUCH, onTouchHandle);
     }
 
-    public function disable():void {
+    public function disable():void
+    {
         mTarget.removeEventListener(TouchEvent.TOUCH, onTouchHandle);
     }
 
-    private function onTouchHandle(_event:TouchEvent):void {
+    private function onTouchHandle(_event:TouchEvent):void
+    {
         var _touchList:Vector.<Touch> = _event.getTouches(mTarget);
 
         if (_touchList.length == 0) return;
 
         var _touch:Touch = _touchList[0];
 
-        if (_touch.phase==TouchPhase.BEGAN) {
+        if (_touch.phase == TouchPhase.BEGAN) {
 
-        } else if (_touch.phase==TouchPhase.MOVED) {
-            pan( _touch.getMovement(mTarget));
-        } else if (_touch.phase==TouchPhase.ENDED) {
+        }
+        else if (_touch.phase == TouchPhase.MOVED) {
+            pan(_touch.getMovement(mTarget));
+        }
+        else if (_touch.phase == TouchPhase.ENDED) {
 //            var _location = _touch.getLocation(mTarget);
 //            trace(_location, mGrid.cartToIso(_location));
 //            trace(mGrid, mGrid.isoToCart(mGrid.cartToIso(_location)));
         }
     }
 
-    private function pan(_deltaLocation:Point):void {
+    private function pan(_deltaLocation:Point):void
+    {
         mTarget.x += _deltaLocation.x;
         mTarget.y += _deltaLocation.y;
 
         validatePanPosition();
     }
 
-    public function get zoom():Number {
+    public function get zoom():Number
+    {
         return mZoom;
     }
 
-    public function set zoom(_value:Number):void {
+    public function set zoom(_value:Number):void
+    {
 
         if (mZoom != _value) {
             var _displayBoundsCenter:Point = new Point(mBounds.x + mBounds.width / 2, mBounds.y + mBounds.height / 2);
@@ -86,7 +94,7 @@ public class PanZoomController
             mTarget.x = mBounds.x;
         }
 
-        if ((mTarget.x + mTarget.width) < (mBounds.x + mBounds.width)){
+        if ((mTarget.x + mTarget.width) < (mBounds.x + mBounds.width)) {
             mTarget.x = mBounds.x + mBounds.width - mTarget.width;
         }
 
@@ -95,7 +103,7 @@ public class PanZoomController
             mTarget.y = mBounds.y;
         }
 
-        if ((mTarget.y + mTarget.height) < (mBounds.y + mBounds.height)){
+        if ((mTarget.y + mTarget.height) < (mBounds.y + mBounds.height)) {
             mTarget.y = mBounds.y + mBounds.height - mTarget.height;
         }
     }
@@ -107,21 +115,22 @@ public class PanZoomController
      * @param absScaleX
      * @param absScaleY
      */
-    protected function scaleAround( offsetX:Number, offsetY:Number, absScaleX:Number, absScaleY:Number ):void {
+    protected function scaleAround(offsetX:Number, offsetY:Number, absScaleX:Number, absScaleY:Number):void
+    {
         var relScaleX:Number = absScaleX / mTarget.scaleX;
         var relScaleY:Number = absScaleY / mTarget.scaleY;
         // center offset relative to parent
-        var offset:Point = new Point( offsetX, offsetY );
-        offset = mTarget.localToGlobal( offset );
-        offset = mTarget.parent.globalToLocal( offset );
+        var offset:Point = new Point(offsetX, offsetY);
+        offset = mTarget.localToGlobal(offset);
+        offset = mTarget.parent.globalToLocal(offset);
         // current position relative to parent
-        var curPos:Point = new Point( mTarget.x, mTarget.y );
+        var curPos:Point = new Point(mTarget.x, mTarget.y);
 
         // center point translation
-        var center:Point = curPos.subtract( offset );
+        var center:Point = curPos.subtract(offset);
         center.x *= relScaleX;
         center.y *= relScaleY;
-        curPos = offset.add( center );
+        curPos = offset.add(center);
 
         mTarget.scaleX *= relScaleX;
         mTarget.scaleY *= relScaleY;
@@ -133,21 +142,22 @@ public class PanZoomController
 
     public function zoomIn():void
     {
-        if (mCurrentZoomIndex+1 < mZoomValues.length ) {
+        if (mCurrentZoomIndex + 1 < mZoomValues.length) {
             zoomTo(mZoomValues[++mCurrentZoomIndex]);
         }
     }
 
     public function zoomOut():void
     {
-        if (mCurrentZoomIndex-1 >= 0 ) {
+        if (mCurrentZoomIndex - 1 >= 0) {
             zoomTo(mZoomValues[--mCurrentZoomIndex]);
             trace(mCurrentZoomIndex);
         }
     }
 
-    public function zoomTo(_value:Number):void {
-        TweenLite.to(this, 0.5, {zoom:_value});
+    public function zoomTo(_value:Number):void
+    {
+        TweenLite.to(this, 0.5, {zoom: _value});
     }
 }
 }

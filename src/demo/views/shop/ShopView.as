@@ -11,7 +11,6 @@ import demo.models.vo.BuildingTypeVO;
 import feathers.controls.Button;
 import feathers.controls.ScrollContainer;
 import feathers.controls.Scroller;
-
 import feathers.controls.TabBar;
 import feathers.core.PopUpManager;
 import feathers.data.ListCollection;
@@ -22,11 +21,8 @@ import flash.utils.Dictionary;
 import org.osflash.signals.Signal;
 
 import starling.display.Button;
-
 import starling.display.Image;
-
 import starling.display.Quad;
-
 import starling.display.Sprite;
 import starling.events.Event;
 
@@ -82,9 +78,9 @@ public class ShopView extends Sprite
 
         mScrollContainer.layout = containerLayout;
 
-        mCloseBtn = new starling.display.Button(mAssetProvider.getTexture("close.png"));
+        mCloseBtn = new starling.display.Button(mAssetProvider.getTexture("close"));
 
-       // mCloseBtn.defaultIcon = new Image(mAssetProvider.getTexture("close.png"));
+        // mCloseBtn.defaultIcon = new Image(mAssetProvider.getTexture("close.png"));
         mCloseBtn.addEventListener(Event.TRIGGERED, onCloseBtnTriggered);
         mCloseBtn.x = 400;
         mCloseBtn.y = 0;
@@ -100,10 +96,10 @@ public class ShopView extends Sprite
     {
         pivotX = this.width * 0.5;
         pivotY = this.height * 0.5;
-        this.x = stage.stageWidth*0.5;
-        this.y = stage.stageHeight*0.5;
+        this.x = stage.stageWidth * 0.5;
+        this.y = stage.stageHeight * 0.5;
 
-        TweenLite.from(this, 0.5, {scaleX:0, scaleY:0});
+        TweenLite.from(this, 0.5, {scaleX: 0, scaleY: 0});
     }
 
     private function onCloseBtnTriggered(e:Event):void
@@ -113,7 +109,7 @@ public class ShopView extends Sprite
 
     private function onSelectedTabChanged(e:Event):void
     {
-        mScrollContainer.removeChildren(0, mScrollContainer.numChildren-1, true);
+        mScrollContainer.removeChildren(0, mScrollContainer.numChildren - 1, true);
 
         var tabBar:TabBar = e.currentTarget as TabBar;
 
@@ -127,7 +123,7 @@ public class ShopView extends Sprite
             image = new Image(mAssetProvider.getTexture(itemType.typeId));
             image.scaleX = image.scaleY = 0.3;
             button.defaultIcon = image;
-            button.label = itemType.name + "\n"+"Cost: "+itemType.cost;
+            button.label = itemType.name + "\n" + "Cost: " + itemType.cost;
             button.iconPosition = feathers.controls.Button.ICON_POSITION_TOP;
             button.name = itemType.typeId;
             button.width = 70;
@@ -145,7 +141,8 @@ public class ShopView extends Sprite
         PopUpManager.removePopUp(this, true);
     }
 
-    override public function dispose():void {
+    override public function dispose():void
+    {
         TweenLite.killTweensOf(this);
         itemSelected.removeAll();
         mItemsByCategory = null;

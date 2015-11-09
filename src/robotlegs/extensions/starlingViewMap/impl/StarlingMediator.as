@@ -1,56 +1,58 @@
-package robotlegs.extensions.starlingViewMap.impl {
-	import flash.events.Event;
-	import flash.events.IEventDispatcher;
-	import robotlegs.bender.extensions.localEventMap.api.IEventMap;
-	import robotlegs.bender.extensions.mediatorMap.api.IMediator;
+package robotlegs.extensions.starlingViewMap.impl
+{
+import flash.events.Event;
+import flash.events.IEventDispatcher;
 
-	/**
-	 * @author jamieowen
-	 */
-	public class StarlingMediator implements IMediator
-	{
-		[Inject]
-		public var eventMap:IEventMap;
+import robotlegs.bender.extensions.localEventMap.api.IEventMap;
+import robotlegs.bender.extensions.mediatorMap.api.IMediator;
 
-		[Inject]
-		public var eventDispatcher:IEventDispatcher;
+/**
+ * @author jamieowen
+ */
+public class StarlingMediator implements IMediator
+{
+    [Inject]
+    public var eventMap:IEventMap;
 
-		private var _viewComponent:Object;
+    [Inject]
+    public var eventDispatcher:IEventDispatcher;
 
-		public function set viewComponent(view:Object):void
-		{
-			_viewComponent = view;
-		}
-		
-		public function get viewComponent():Object
-		{
-			return _viewComponent;
-		}
-		
-		public function initialize() : void
-		{
-			
-		}
+    private var _viewComponent:Object;
 
-		public function destroy() : void
-		{
-			eventMap.unmapListeners();
-		}
+    public function set viewComponent(view:Object):void
+    {
+        _viewComponent = view;
+    }
 
-		protected function addContextListener(eventString:String, listener:Function, eventClass:Class = null):void
-		{
-			eventMap.mapListener(eventDispatcher, eventString, listener, eventClass);
-		}
+    public function get viewComponent():Object
+    {
+        return _viewComponent;
+    }
 
-		protected function removeContextListener(eventString:String, listener:Function, eventClass:Class = null):void
-		{
-			eventMap.unmapListener(eventDispatcher, eventString, listener, eventClass);
-		}
+    public function initialize():void
+    {
 
-		protected function dispatch(event:Event):void
-		{
-			if (eventDispatcher.hasEventListener(event.type))
-				eventDispatcher.dispatchEvent(event);
-		}
-	}
+    }
+
+    public function destroy():void
+    {
+        eventMap.unmapListeners();
+    }
+
+    protected function addContextListener(eventString:String, listener:Function, eventClass:Class = null):void
+    {
+        eventMap.mapListener(eventDispatcher, eventString, listener, eventClass);
+    }
+
+    protected function removeContextListener(eventString:String, listener:Function, eventClass:Class = null):void
+    {
+        eventMap.unmapListener(eventDispatcher, eventString, listener, eventClass);
+    }
+
+    protected function dispatch(event:Event):void
+    {
+        if (eventDispatcher.hasEventListener(event.type))
+            eventDispatcher.dispatchEvent(event);
+    }
+}
 }

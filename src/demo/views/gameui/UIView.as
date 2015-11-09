@@ -8,7 +8,6 @@ import demo.models.IAssetProvider;
 import org.osflash.signals.Signal;
 
 import starling.display.Button;
-
 import starling.display.Sprite;
 import starling.events.Event;
 
@@ -27,13 +26,13 @@ public class UIView extends Sprite
     {
         mAssetProvider = assetProvider;
 
-        mShopButton = new Button(mAssetProvider.getTexture("blue_button00.png"), "Buildings");
+        mShopButton = new Button(mAssetProvider.getTexture("blue_button00"), "Buildings");
         mShopButton.x = 10;
         mShopButton.y = 610;
         mShopButton.addEventListener(Event.TRIGGERED, onShopBtnTrigger);
         addChild(mShopButton);
 
-        mZoomOutButton = new Button(mAssetProvider.getTexture("zoomout.png"));
+        mZoomOutButton = new Button(mAssetProvider.getTexture("zoomout"));
         mZoomOutButton.x = 900;
         mZoomOutButton.y = 660;
         mZoomOutButton.addEventListener(Event.TRIGGERED, onZoomOutTrigger);
@@ -41,7 +40,7 @@ public class UIView extends Sprite
         mZoomOutButton.height = 32;
         addChild(mZoomOutButton);
 
-        mZoomInButton = new Button(mAssetProvider.getTexture("zoomin.png"));
+        mZoomInButton = new Button(mAssetProvider.getTexture("zoomin"));
         mZoomInButton.x = 900;
         mZoomInButton.y = 610;
         mZoomInButton.addEventListener(Event.TRIGGERED, onZoomInTrigger);

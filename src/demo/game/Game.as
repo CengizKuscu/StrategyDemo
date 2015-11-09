@@ -3,22 +3,23 @@
  */
 package demo.game
 {
+import com.greensock.TweenLite;
+
+import demo.game.GridItem;
+
 import demo.models.IAssetProvider;
 import demo.models.vo.BuildingTypeVO;
-import demo.signals.OpenItemPopupSignal;
 import demo.zoom.PanZoomController;
 
-import flash.geom.Matrix;
-
 import flash.geom.Point;
-
 import flash.geom.Rectangle;
+import flash.utils.ByteArray;
+import flash.utils.Dictionary;
 
 import org.osflash.signals.Signal;
 
 import starling.display.Image;
 import starling.display.QuadBatch;
-
 import starling.display.Sprite;
 import starling.events.Event;
 import starling.events.Touch;
@@ -56,8 +57,10 @@ public class Game extends Sprite
     private const OBJECT_PLACEMENT_STATE:String = "object placement state";
     private const NORMAL_STATE:String = "normal state";
 
-    [Inject]
+
     public var openItemPopupSignal:Signal;
+
+    public var saveDataSignal:Signal;
 
     public function Game(assetProvider:IAssetProvider, grid:Grid, displayBounds:Rectangle, itemFactory:GridItemFactory)
     {
@@ -94,6 +97,8 @@ public class Game extends Sprite
         mState = NORMAL_STATE;
 
         openItemPopupSignal = new Signal();
+
+        saveDataSignal = new Signal();
     }
 
     public function setBG(textureName:String, W:Number, H:Number):void
@@ -140,6 +145,32 @@ public class Game extends Sprite
         mPanZoomController.enable();
     }
 
+    public function loadItems():void
+    {
+        var byteArray:ByteArray = SaveAndLoad.loadFile();
+        if (byteArray == null) {
+            return;
+        }
+        var obj:Object = byteArray.readObject() as Dictionary
+
+        var tmpItem:GridItem;
+
+        for each (var item:* in obj) {
+            if(item == null)
+            {
+                continue;
+            }
+            if (item.typeId != null) {
+                tmpItem = mItemFactory.createGridItem(item.typeId, item.gridX, item.gridY, item.id);
+            }
+            else {
+                tmpItem = mItemFactory.createFakeGridItem(item.gridX, item.gridY, item.tmpMergeId, item.mergeItemId, item.id);
+            }
+            mGrid.addItem(tmpItem);
+        }
+    }
+
+
     private function onTouchHandler(e:TouchEvent):void
     {
         var touch:Touch = e.getTouch(mDisplayContainer);
@@ -167,12 +198,11 @@ public class Game extends Sprite
             var item:GridItem = _mGrid.getItemIdAt(tilePos.x, tilePos.y);
             if (item != null) {
                 //TODO Open popup
-                if(item.typeId == null)
-                {
-                    openItemPopupSignal.dispatch(item.tmpMergeId, item.mergeItem)
+                if (item.typeId == null) {
+                    var tmpItem:GridItem = mGrid.getItemByItemId(item.mergeItemId);
+                    openItemPopupSignal.dispatch(tmpItem.typeId, tmpItem)
                 }
-                else
-                {
+                else {
                     openItemPopupSignal.dispatch(item.typeId, item);
                 }
             }
@@ -186,6 +216,7 @@ public class Game extends Sprite
                     var item:GridItem = mItemFactory.createGridItem(mTempItemTypeId, tilePos.x, tilePos.y)
                     _mGrid.addItem(item);
                     cancelObjectPlacement();
+                    saveDataSignal.dispatch(mGrid.mItemsByItemId);
                 }
             }
             else {
@@ -200,14 +231,15 @@ public class Game extends Sprite
                     var item:GridItem = mItemFactory.createGridItem(mTempItemTypeId, tilePos.x, tilePos.y)
                     _mGrid.addItem(item);
 
-                    var tmpItem = mItemFactory.createFakeGridItem(tmpPoint0.x, tmpPoint0.y, mTempItemTypeId, item);
+                    var tmpItem = mItemFactory.createFakeGridItem(tmpPoint0.x, tmpPoint0.y, mTempItemTypeId, item.id);
                     _mGrid.addItem(tmpItem);
-                    tmpItem = mItemFactory.createFakeGridItem(tmpPoint1.x, tmpPoint1.y, mTempItemTypeId, item);
+                    tmpItem = mItemFactory.createFakeGridItem(tmpPoint1.x, tmpPoint1.y, mTempItemTypeId, item.id);
                     _mGrid.addItem(tmpItem);
-                    tmpItem = mItemFactory.createFakeGridItem(tmpPoint2.x, tmpPoint2.y, mTempItemTypeId, item);
+                    tmpItem = mItemFactory.createFakeGridItem(tmpPoint2.x, tmpPoint2.y, mTempItemTypeId, item.id);
                     _mGrid.addItem(tmpItem);
 
                     cancelObjectPlacement();
+                    saveDataSignal.dispatch(mGrid.mItemsByItemId);
                 }
             }
 
@@ -229,8 +261,10 @@ public class Game extends Sprite
 
     private function handleMouseHover(touch:Touch):void
     {
+        var mousePOS:Point;
+
         if (mState == OBJECT_PLACEMENT_STATE) {
-            var mousePOS:Point = touch.getLocation(mDisplayContainer);
+            mousePOS = touch.getLocation(mDisplayContainer);
             var tilePOS:Point = _mGrid.cartToIso(mousePOS);
             var gridPOS:Point = _mGrid.isoToCart(tilePOS);
             mTempItemImage.x = gridPOS.x;
@@ -242,7 +276,6 @@ public class Game extends Sprite
                 else {
                     mTempItemImage.color = Color.WHITE;
                 }
-                trace("tilePOs:", tilePOS.x, tilePOS.y);
             }
             else {
 
@@ -259,6 +292,31 @@ public class Game extends Sprite
                     mTempItemImage.color = Color.WHITE;
                 }
 
+            }
+        }
+
+
+        mousePOS = touch.getLocation(this);
+
+        if (mousePOS.x < 50) {
+            if (mDisplayContainer.x < 0) {
+                TweenLite.to(mDisplayContainer, 1, {x: 0});
+            }
+        }
+        else if (mousePOS.x > 935) {
+            if (mDisplayContainer.x >= 0) {
+                TweenLite.to(mDisplayContainer, 1, {x: 950 - mDisplayContainer.width});
+            }
+        }
+
+        if (mousePOS.y < 35) {
+            if (mDisplayContainer.y < 0) {
+                TweenLite.to(mDisplayContainer, 1, {y: 0});
+            }
+        }
+        else if (mousePOS.y > 670) {
+            if (mDisplayContainer.y >= 0) {
+                TweenLite.to(mDisplayContainer, 1, {y: 700 - mDisplayContainer.height});
             }
         }
     }
@@ -281,7 +339,7 @@ public class Game extends Sprite
                     var _image:Image = _item.image;
                     var _position:Point = _mGrid.isoToCart(_isoPoint);
 
-                    if (_item.tmpMergeId != null) {
+                    if (_image == null) {
                         continue;
                     }
                     // get target coordinates in global coordinated
@@ -300,6 +358,11 @@ public class Game extends Sprite
     public function get mGrid():Grid
     {
         return _mGrid;
+    }
+
+    public function saveGames():void
+    {
+        saveDataSignal.dispatch(mGrid.mItemsByItemId);
     }
 }
 }

@@ -7,14 +7,15 @@
 
 package robotlegs.extensions.starlingViewMap.api
 {
-	import starling.display.DisplayObject;
-	
-	/**
-	 * @author jamieowen
-	 */
-	public interface IStarlingViewMap
-	{
-		function addStarlingView( view:DisplayObject ):void;
-		function removeStarlingView( view:DisplayObject ):void;
-	}
+import starling.display.DisplayObject;
+
+/**
+ * @author jamieowen
+ */
+public interface IStarlingViewMap
+{
+    function addStarlingView(view:DisplayObject):void;
+
+    function removeStarlingView(view:DisplayObject):void;
+}
 }

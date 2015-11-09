@@ -3,27 +3,29 @@
  */
 package
 {
-import demo.commands.BuyItemCMD;
-import demo.commands.LoadAssestsCMD;
-import demo.commands.LoadGameDataCMD;
-import demo.commands.OpenItemPopupCMD;
-import demo.commands.OpenShopViewCMD;
-import demo.commands.PrepGameViewCMD;
-import demo.commands.UnBuildCMD;
-import demo.commands.ZoomInCMD;
-import demo.commands.ZoomOutCMD;
+import demo.commands.game.OpenItemPopupCMD;
+import demo.commands.game.SaveDataCMD;
+import demo.commands.game.UnBuildCMD;
+import demo.commands.startup.LoadAssestsCMD;
+import demo.commands.startup.LoadGameDataCMD;
+import demo.commands.startup.PrepGameViewCMD;
+import demo.commands.ui.BuyItemCMD;
+import demo.commands.ui.OpenShopViewCMD;
+import demo.commands.ui.ZoomInCMD;
+import demo.commands.ui.ZoomOutCMD;
 import demo.models.AssetModel;
 import demo.models.GameDataModel;
 import demo.models.IAssetProvider;
-import demo.signals.LoadAssetsSignal;
-import demo.signals.LoadGameDataSignal;
-import demo.signals.OpenItemPopupSignal;
-import demo.signals.OpenShopViewSignal;
-import demo.signals.PrepGameViewSignal;
-import demo.signals.ShopItemSelectedSignal;
-import demo.signals.UnBuildSignal;
-import demo.signals.ZoomInSignal;
-import demo.signals.ZoomOutSignal;
+import demo.signals.game.OpenItemPopupSignal;
+import demo.signals.game.SaveDataSignal;
+import demo.signals.game.UnBuildSignal;
+import demo.signals.startup.LoadAssetsSignal;
+import demo.signals.startup.LoadGameDataSignal;
+import demo.signals.startup.PrepGameViewSignal;
+import demo.signals.ui.OpenShopViewSignal;
+import demo.signals.ui.ShopItemSelectedSignal;
+import demo.signals.ui.ZoomInSignal;
+import demo.signals.ui.ZoomOutSignal;
 import demo.views.gameui.UIMediator;
 import demo.views.gameui.UIView;
 import demo.views.itempopup.ItemPopupMediator;
@@ -33,15 +35,10 @@ import demo.views.shop.ShopView;
 
 import flash.events.IEventDispatcher;
 
-import org.swiftsuspenders.Injector;
-
 import robotlegs.bender.extensions.contextView.ContextView;
-
 import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
-
 import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IInjector;
 
@@ -85,6 +82,7 @@ public class DemoBuilderConfig implements IConfig
         signalCommandMap.map(ShopItemSelectedSignal).toCommand(BuyItemCMD);
         signalCommandMap.map(OpenItemPopupSignal).toCommand(OpenItemPopupCMD);
         signalCommandMap.map(UnBuildSignal).toCommand(UnBuildCMD);
+        signalCommandMap.map(SaveDataSignal).toCommand(SaveDataCMD);
 
 
         //Models

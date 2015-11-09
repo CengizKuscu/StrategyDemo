@@ -4,8 +4,7 @@
 package demo.views.itempopup
 {
 import demo.game.GridItem;
-import demo.models.vo.BuildingTypeVO;
-import demo.signals.UnBuildSignal;
+import demo.signals.game.UnBuildSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 

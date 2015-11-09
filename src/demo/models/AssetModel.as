@@ -3,7 +3,7 @@
  */
 package demo.models
 {
-import demo.signals.PrepGameViewSignal;
+import demo.signals.startup.PrepGameViewSignal;
 
 import feathers.themes.CastleBuilderTheme;
 
@@ -38,8 +38,7 @@ public class AssetModel implements IAssetProvider
 
     private function onProgress(ratio:Number):void
     {
-        if(ratio == 1)
-        {
+        if (ratio == 1) {
             //TODO: Prepare Game View
             new CastleBuilderTheme(mAssetManager.getTextureAtlas("game"));
             prepGameViewSignal.dispatch();
@@ -50,9 +49,8 @@ public class AssetModel implements IAssetProvider
     {
         var texture:Texture = mAssetManager.getTexture(textureName);
 
-        if(texture == null)
-        {
-            trace("Texture "+textureName+ " not found. Using debug texture!");
+        if (texture == null) {
+            trace("Texture " + textureName + " not found. Using debug texture!");
             texture = Texture.fromColor(100, 100, 0xff0000);
         }
         return texture;

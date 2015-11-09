@@ -5,7 +5,6 @@ package demo.models
 {
 import starling.textures.Texture;
 
-
 public interface IAssetProvider
 {
     function getTexture(textureName:String):Texture;
